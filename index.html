@@ -1,0 +1,1507 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="やること">
+<meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#221C18" media="(prefers-color-scheme: dark)">
+<!-- ホーム画面のアイコン。外部ファイルを持たないため data URI で埋め込む。
+     絵文字ではなくパスで描いた寝ている猫（環境ごとの絵文字の差を避けるため） -->
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAQAElEQVR4AexdCXQUx5n+e3QCkgAJEIcQIG4ECAxICIFtLnOY2HgTO8YYwpW38TrE2bUdL8abty/P+3zk5a2zeB+sY8fHxoljs4RN7BgDwSYx2GDEaUAGDBKHMCAkDUJI6Ex/JfUgjXpmunu6Z7q6S29quru66q////5vStV1taf+RkWzCAIDp3DAQ+JPIOAgBAShHeRMYQqRILRggaMQEIR2lDuFMYLQruGAOwwVhHaHn11jpSC0a1ztDkMFod3hZ9dYKQjtGle7w1BBaHf42TVWCkITkWu87QJDBaFd4GQ3mSgI7SZvu8BWQWgXONlNJgpCu8nbLrBVENoFTnaTiSEI7SYohK1OQEAQ2gleFDb4EBCE9kEhTpyAgCC0E7wobPAhIAjtg0KcOAEBQWgneNEMGxwiQxDaIY4UZrQgIAjdgoP49kOg4tR5OvqbLVS47j1DofzkOT+JkbkUhI4MztyVcnHPUaqtqNKvtyRR1rx8Sh3aX39eE3IIQpsAohBxC4GsuZOp+5CMWxERPhOEjjDgvBTXJy+bErom6VJ34F15USUzlBWEBgrBgyvvopYdvXQeTVh9f7swYMZEVTxA5rThmar3IhkpCB1JtDkvq+zoGSrZsa+DFXYhMxQThAYKIoREgAcywwhBaKAgQlAErn511vY1s2KAILSChDiqIgAyF2/d0+Ee2tJ2aDP7KyYI7Y+IuPYhEIzMPbIH+dLZ6SQ8QtvJkgC61JR7qeSTjg8yAZI7NhoYAAutBl4tKiG1mhn58WDoP4J49O2PCKOLuB/N4HhCVxaXUtHmj+nS4RPRxDmqZcN2YAAstCjCauZte7Uk9aWpLb9GGF30RUTpxAWEvkjUTHT4rQ9Iq0Oj5AtLioXNsB0YVBbLWIQohZFZpc0cIpttbjue0F65hgbaTfUNtP+VTXTjSgUuXRFgK2yG7TBYwQLnaqH8xNmAzQy19G3jElNTqM/k7LZRUTn3RKXUCBXaKJO46sJlX2n11TW0b8NGqrt+wxfn1BPYCFths2IjsAAmyrX/MXVYZrtRQf9RwmDX2YvnUPfB0ZvDodjiaEKjRmpqaFRsZceaskpWUzfW1bNrJ37BNtTMsLWtfcACmLSN03rOSzrHE1rNEd6Si6xN3dwkN67VEnAcB5vQZoaNamYIQquhwklcsIegy0dOst4PTkzRrCZ6M2BboAzBMAmUh6d4R9fQlXJNHMwZZ3cWOqqPukTub4dNwWwOhUmwvDzccyyhMYhQV1Ud0gdFDumjVvqaQxkMTIBNqHTh3McAi97lW2Yt2XIsoTUDJDej0easbO3eC8eR0coL3WED+pq16KAZGy3CVNJggEXz8i2Tl2w5ltBwsgrWqlHop0WvAPptVRMEjYzuTegM3WGDVk30YKNVptF0Zi/ZciyhvSWlujBGfy36bdF/qytjFBNDV+gM3fWooRcbPbKRVuvyrYGzc01fsuVIQmPwoKr0CrDVFdBvi9oO/bi6MkYhMXSErtBZb/HABhjpzac1fdvlW5hmqpaPrXIZMUDtVlhxjiQ062uV28ZGkPHKPSNoj6I/10j+SOSBbtARuhoqT8aGYWQos/ZM0Vjl4khCl58Kb5MT9OOi90O76yKbErpBx3BKDRejUGVjkhOmmfqnYzWzhYtpHUlor4ZZZf5A+1+jP7dE7tf1j4/2NXSCbuHqYQZGgXS4erwk4CQnzLHGXGqr5k9bSuhABlsZj3/H3rOhp0lq0aHIZn3UWvuatdgGjICVlrR60qBmLt4eei61VfOnHUfo6ivlVH+jVo8PAqeV25poq9qhmws6QBetfc2BjWq5A4yAVcuVOd+MzFGeS+04Qpv9rxT9u+hNQH+vOW7XLwVlQwfooj934BxmYqV3LrVV86cdR+iKU2cDe9DgHfTzor8X/b4GRRjOhjJRNnQwLCRARjOx0juX2qr5044jdKUJD4Rq/kd/L2pJ9P+q3bciDmWhTJRthXyrsLJCV60yHUXouuoaMrtd2BZI9PuiHdv2YQoPV5cOn6Rzuw7R6a2fU9GmHXTkfz+gwvUb6bOfv0U7/30DbXvyJRZwjjjcQxqkRR7khQzIUspDGSgLZSpxZh+BFTAzQa5tRDiK0NfkQRGzHpoCeejy4RNUuGEjHX7zfdrx9Dr6/Be/oYOvbaZj726lkx/8jUp2FlLpvmNUVnSGrp2/xPZYbqqrJwRM2EEc7iEN0iIP8kIGZO1Y+zKTXbjhPUJZgfQwJV5+6GWYmSLMHkIcRWhL5vrKTmc/EuUoSXT1q2K6uP841Veb1JvShgv112uY7KtflRDJZbUtuxk6kLl/lmBmroq6pDmK0OUmPhA2y+xBYGhK8rcS5NOIfpRyW48+nUxSwkzMTFIpLDGOITTanOF2Q/kqQJnMkiTJFaREJH/IJn9QRZLwLSsk6yh/WAUuXxn+ADNgZ1iAzTI6htCYQYZVzUbwban1fHQmUkhDNv6TdZQ/rQo2GyY2MAN2rYK4PziG0F6d858Vz4EKLcSQSFIizTxaLKtFZ4kkVl3LP0ocdZZpFDudxUQkuXMIbXAJlUwFGWhJDpx/8KtUgk5TvAax01lMRJI7htCa18mxGsxYTRYRj5hRiE4bNWNnhm4Wy3AEoW96r1NNxTVtUKEWQ+OCHbVl4S4Vs03+r8OOobUHdsAwdEr7p3AEoSsxoGJ/rG2toVMwdAShvYLQYf9YnIJhNAkdthMUAZXFF5RTcTSIgFMw5J7QWL3sDTDDzhMXY9C9zs0WCBNgCCx5t5x7Ql+/cJkwONDWEZ64WML83Kb6xrbR4lxGAJgAG2AkX/o+wBBY+iI4PeGe0JVt+lAlj4cy8nNo0KxcwgoKTn1iudrABhgBK2CmFNgWSyWOt6MDCN2yILb3uOFUsGY5pQ0fQF9/uJs3P0RcX2CEmhqYATsoUBmg6YZ7vATuCR2bEEf5jy+hnOX3UGNdAx15+8+8YB91Pb/87YcyZvUMO2AILK1RKnJSuSd09qK5lJLZm7035cCvNlFTfUPk0OO8JGB14Fd/YNgBQ2DJuUnEPaHhgKbGRjrw6h+otrIKlyLoQACYHXh1MwFDHdlsm9QRhMa6vMoz+nYbta1HoqBY5ZkLbD1kFIo2vUjuCY01eqe3fW46MG4TeHrbHqq+VM692VwTurmpib787RZqbmzi3hHRNqBZbrYdfXcrAdNo6xJO+VwTuvSLY4SXSYYDQLTz2qn8ilPnCJjaSSe9unBLaAzTfr1F9DfrdXio9F9/tJvrWppbQp/fdZCsfptTKOc78X7NVS+d/+wwt6ZxSej6mpt0evsebkG3u+KnPtxF+A9odz3V9OOS0CWf7KO6qhtq9og4ExAAtmdljE0QFXER3BEaWw58c/CriAPltgIvHiji0mQbE1odTzyJV39zVf2miDUNgaoLV8jbZiajaYItFsQdoUv3fmkxJEK8gsA5+cFbOeflyBWhMQkd287yAi7vel46corQxOPJDq4IjTkHDbV1POHLta4Ncm8Sb9vtckXosqJirgnCo/JXjp/hSm2+CH38NFfgOkHZskgQ2kSguCF0rfc64cnbRNuFKA0IeEsumveaPA3lhZuEG0IDWBgrxXiof0EODZyRS92HZJD/6mWkEcEYAsASmA6amcswljwt9Cg/dc6YwCjkatE4CgXrLbK23Muy9M4ZTqMeuIuG33sH5a5eRLN//mPKf2IpZX93DmXkj6Xkfj1ZOvEVAgFJYlgBM2CX/+T3GJbAdNg9dzCMe40ZwoQo2LMLm39xQ+jrrZPPYxLi2kMqOyalfzplTBlL2Q/OoSk/WUazXnyMJv3wuzRswTRKHzuU4pM7t8/jwitgACyGfet2hs2sF37EsAJmwC4loxeRjCW1+YtNjGdXN8o1boTJUkf3ixtCV19uGR0s/eIoe+PUpUMnqNarvoYwJiGeUodm0qDZk2ncyoU0/dlH6Y6f/YDGrbiXER/NlujCbn3pntgY1myAzbAdGACLQbPyGDbASE0LYApsj76zlb3NC2lutFYmOLd74IbQdddaJiNhcOXcrkN08Nf/Tzt/uoE+fua/2WvVzmzfQ+Unz1LjTfV+6sSuyZSeM4w1TfpOHGV3vyj6GT72zc1mzQbYDNvVBAErYAbs8Fo5YAlMge35zw75VgLVtDb31GTYLY4bQmPKqBp4mBmG0cMTf/orffHy72n7U/9Fu198g46+8xGd+/QAVZVeJnm4q11WNwzONNT4/bCbmxkWwATYACNgBcyAHTAElu2Aar3Adgetp7Y/cEPopoZ6bWDCcReusEnqx97bTrtfeJO2PfkS7V33Ozrxx51UuucIDV1wO82U25B4sNQmtGOqEfdNZzKmrl1FfSeFX+P3k2tUyDJLryHzp9IF2VbYDNuBAbAAJpjAz7pAZaw6WtYxprGhsWOkTWP4IXQYGy+ihqk4dZ4qi0upb94Y6tKrO8UmJrCuv16jB+t2DR6uBtw5kcmArDEP303dsvrplqNk6D44g0Yvnm+6Xv1kWyvOXCDYDgyU8vQeG2rMf8GoXh20pueG0FoNCpaua2afDrfxlB/XObFDfKCIFgLP73A7JSO9Q5zWCLvqpVV/O6XjhtCxnVpIhx4KowMr5SdLOmAfn9yFxi5dQLGd4jvc84/wxMfJPSULSa2HoPL0ef/kmq/toleggRUFe80GRTEhN4SOkbuhgJNvYMXAwMq185fp/O6DENMu9Bg5iKauWUloSrS7oVzI/bN9bhtJBU8to6Q+PZRY3/Hi/uME2b4InSfIG3G9ZJswCKVlYCWuU4JOi6KXnBtCo/YATOEOrBzf9LHqDkEJXZMI/bQFa1bQkHlTacjcAhZGfnsmTX16JY393gLq3KMbVGgXGmpuUtGmHe3ijFxYrVd8cmf2gzUysBJo138jdlqdhxtCd0rtyrAId2AFPRKH33yf0J/NBPp9JfVOo8Fz82nwvCksZN5+G3tY80vGLtGPu2/9RlMW7OKh7dDrfzRNr8JXNjECmzGwkpCcxOzl4cvDg5LQsXN6Kg7M4eEOrCRn9GR91rWVxod0b16rpr3rfk/eEvM2iay6eMU0vZJ6p5o2sKJgzxxg8y9uCJ3USmh/PDEYgEEBDA5gkACDBRg0wOABBhECDaxg9cuu51+nbwysbsZC3d0vvE7Xzn3jr07Y12bpZebASiDswzbWAgHcELpLr5YaOiQG8mABBg0weIBBBAwmYFABgwsYZADR8QOAHDj90Bt/osL/+T9GbGxYiPhAAZPdkXbvuneo7npNoGRhx5uhF+ZjHHt3KxtMgu3AAFgAE2ADjPxHUAMprhn7QALCjNeTnRtCd0praUPrMU5Ji/YpBhfO/GUvwZn+jiw7dppA7B1rX6Z9698jvKoBNf7XH+5m72vBPcxzKNywkZBWkWv1EWWhbCN6NTc1EZpmsBm2AwOj+gpCG0UuSD48FHbqnhIkRfi3UDNeLSqWh4y/JEzYObVlFyGgWYKmTfglGJMQZ7hNAgAAB+JJREFUTb2AOXqAjGke+Vzc1NCAJk3uL8aRp4BRSPT1IsQldeJJdaYrb5hzRWgMgDCUOfmK65JI6NfG8DpCwVPLiTdSp7euWuEEcuKK0Ji0L8Xw87rj9JwRlJDSxccFnPedEP7MPJ9Ai0+kGA+lDhtgcSnmiueK0BiC7clRsyOxDZkVt8W1zklRrsM7Wps7fewwwsoXa0sxVzpXhIbpmJiEowjWI8Aj1twRGg8piRb3dlhPFfuX0CU9jboP6W9/Rf005I7QkiRRZkGOnxni0mwE+k8ZS5IkmS3WcnncERqIZBSMo3iV9inuiRA+ApiZB4zDlxR5CVwSGn27WTNzI4+WzhIb1N47zkGllzUrj2LiYnVaa4/kXBIa0GVMyQlaSyON2QET4rFL05SnllF8cpeQ4m+y2XzN7dI11Yde7JuQkkRT/nUZ5T++hJL79myX3+qL+OTOxGvtDGy4JXRMfBxFspaOlwk88ZEHKKV/OiNZztK7Cf20ADFQ6Jc3usOtzuk9OsS1i5AkGvPwfEru05NSMnvThB98hyI5GDNkXgG3tTNw5JbQUL7/1PGEWhPnVgdPrEeulTv7isGAw+iH5vmu255IHg9hm4O04QPlaEkOtz59J46kzDsm3IrwOxv5DzMobfitwQzMo5CkyLgJ/w0y8vl+4I4MUn5OM+vSExtDox+aT6FqSjPKq62oImXaqSIPOzBN+7fv09D50ygpPY2wRAuEKFiznLDNgZKu7RFkB2nHrVxIvllskiSTeCBhXz6skGmbvnTfMaqrqm4bZck5MBwt/2eQPO1/gJYUZqFQrgkNXFIyelHW7Mk4tTxgfnF9dfs9KkDirDmTqeDpFQRyZz941y2itmpUXVZBjXXt285YkDt17Uqa88snac5LT9DEf7q/w38bLE44+rstrVKsPQyVmxop/XpZW0gEpHNPaGCUdddkwmYtOLcyYAop5kv7kzpYmZhIv3/9Rtr/yibSkw/rFQ++upktOQsm34x73Qb1owEzJpkhKhoy2pXpCEJ7YmIoZ/k9lNgtuZ1xVlxg2dWel94mrP8LKr+5mU5v20Of/eItulFWyTaS/PS510IuEGhubGKLED597td046o3aBFm3ARm41ctJE8MP5O+gtntCELDwITkLjR+1X2kbHeAOKtC9eVy2v38G2xTSKxqwcoS1N5sK9rDJ9myp10vvEEn3/+rbwdP6II0WML1+X++zVaTVJVeYbul3vRep7KiM2xRwd+efZVtNIk2O/JYGYDV+O/fR/FJtx52rSwvErIdQ2iAhS610Yvm4DQiAc0JrGgBSbFEi21F+9pmwrKn6xfLAurgLS5le1zvlkm//Se/pE9+up4K5WYJln1Fcuta9NKkZKQH1JPHG44iNBzQZ8IoGjxnCk5FCIIAdiftc9uIICn4vOU4QsMNQ+YX0PD7puNUBBUEsBvU4Dn5Knf4j3IkoeGWgXdOFKQGEH4BZPbv6/ZLwvWlYwkNr4DUY5bcTRg0wLWbAzAAFk4mM/zraELDQIzmTVr9IGGGHq7dGBJSuhAwABZOt9/xhIYDu8sDB5gll+yAkTDYoyfA5slPLCVgoCcfr2ldQWg4BzsvTf7nxZQ5bTwuXRH6Tx1HsDmxKz+7h4brGNcQGkBhIGHkd2YRXsqZmJqCKEcG2AYbR90/OyIDTXYC0VWEVoBPHZpJU9esoMFzpxBeM6HE836ELeiOmybbhj1MeLfHiP6uJDSAwgIBTGaftnYFYY4y4ngOfW4bSdOeWUkYMAGxebYlHN1dS2gFtMRuKTRmyQLKk9vXXQd0fEuWks6ux26D+tLkx5ewV2YkdrV+cpZdcVD0cj2hFSC6DZSJ8S8P04R//DaF885BRZ7VR6yYmfjI/ZT348XUNbO31cVxI18Q2s9VPUZlUd5jD1HuY4sI78n2xMb6pYjeJZoSWBiALshJjz5AaSOwxCt6+tixZEHoAF7pnpVB41bcSzOfX02oCQdOn8QWrgZIblk0FsuibOgw87nVhKVbmFVoWYGcC+5IaM4NMlt9dPWhJhy+8E62tcCdP3uEMO0SD2FWrMbGFryQjTJQFrYzQNnQAWsozbbPafIEoXV6FKuwsT0B3ls449lHacZ//JCwTwdq0NGL5xPeA4hV3b3Hj2DLwjr37E4xCfEs4BxLxXAPaZAWeZAXMqbLsiAPslEGytKpnuuTC0KHQwFJYntmYPk/atB+udk0aFYeYVV3zrJvUe6PFsldaato1ouPsTDtmVUsDveQBmmRB3khIz6pE5Esk8SfYQQEoQ1DJzLaEQFBaDt6RehkGAFBaMPQ8Z/RiRYIQjvRqy62SRDaxc53oumC0E70qottEoR2sfOdaLogtBO96mKbBKFVnS8ieUVAEJpXzwm9VREQhFaFRUTyioAgNK+eE3qrIiAIrQqLiOQVAUFoXj0n9FZFQDehVaWISIGATRAQhLaJI4Qa5iAgCG0OjkKKTRAQhLaJI4Qa5iAgCG0OjkKKTRAQhLaJI2yoBpcqCUJz6TahdCAEBKEDISPiuURAEJpLtwmlAyEgCB0IGRHPJQKC0Fy6TSgdCAFB6EDIBIsX92yLgCC0bV0jFDOCgCC0EdREHtsiIAhtW9cIxYwgIAhtBDWRx7YICELb1jVCMSMImE1oIzqIPAIB0xAQhDYNSiHIDggIQtvBC0IH0xAQhDYNSiHIDgj8HQAA//8ijlI6AAAABklEQVQDAKcVHelaiR2JAAAAAElFTkSuQmCC">
+<link rel="icon" href="data:image/png;base64,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">
+<title>やること</title>
+<style>
+/* ===========================================================================
+   間隔タスク管理アプリ
+
+   設計上の約束（触る前に読むこと）
+   - 遅れを表す色・超過日数・警告・バッジ・連続記録・達成率は「どこにも無い」。
+     遅れの唯一の表現は、並び順が上がることとセクションが変わること。
+   - 赤は一切使わない。検証エラーの表示にも使わない。
+   - アクセント色は「追加」「取り消し」「完了演出」だけに予約されている。
+     だから編集シートの「保存」は中立色。弱く見えるのは意図的。直さないこと。
+   - 未完了のタスクは動かない・光らない・話しかけない。
+     かわいい表現が出てよいのは「完了した瞬間」と「ぜんぶ寝てる」の2箇所だけ。
+   =========================================================================== */
+
+:root{
+  color-scheme: light dark;
+  --bg:#FBF6EF;
+  --surface:#FFFDF9;
+  --text:#3A332E;
+  --muted:#7A6F66;
+  --press:#F1E8DD;
+  --line:#EBE0D3;
+  --accent:#A34E60;          /* 白文字とのコントラスト 約5.5:1 */
+  --accent-rgb:163,78,96;
+  --accent-ink:#FFFFFF;
+  --warm-1:#FFF7EE;
+  --warm-2:#F4E6D8;
+  --shadow:rgba(90,70,55,.10);
+  --catshadow:rgba(120,88,64,.28);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#221C18;
+    --surface:#2C2521;
+    --text:#E8DFD6;
+    --muted:#A2958A;
+    --press:#39302B;
+    --line:#3B322C;
+    --accent:#D68FA0;        /* 濃い文字とのコントラスト 約6.7:1 */
+    --accent-rgb:214,143,160;
+    --accent-ink:#241A1D;
+    --warm-1:#352B25;
+    --warm-2:#241D19;
+    --shadow:rgba(0,0,0,.30);
+    --catshadow:rgba(0,0,0,.45);
+  }
+}
+
+*{ box-sizing:border-box; }
+
+html{ font-size:100%; }
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Hiragino Maru Gothic ProN","ヒラギノ丸ゴ ProN","Hiragino Maru Gothic Pro",
+              -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+  font-size:1.0625rem;
+  line-height:1.7;
+  letter-spacing:.04em;
+  padding-left:env(safe-area-inset-left);
+  padding-right:env(safe-area-inset-right);
+  -webkit-font-smoothing:antialiased;
+}
+
+button{ font:inherit; letter-spacing:inherit; color:inherit; }
+
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}
+
+:focus-visible{ outline:2px solid currentColor; outline-offset:2px; border-radius:6px; }
+
+/* ---------- 日付シミュレーションのバー（#today= のときだけ出る） ---------- */
+#dbgbar{
+  display:flex; align-items:center; gap:.75rem; flex-wrap:wrap;
+  padding:.5rem 1rem calc(.5rem);
+  padding-top:max(.5rem, env(safe-area-inset-top));
+  background:var(--press);
+  color:var(--muted);
+  font-size:.8125rem;
+  border-bottom:1px solid var(--line);
+}
+#dbgbar button{
+  margin-left:auto; background:none; border:1px solid var(--line);
+  border-radius:999px; padding:.15rem .8rem; font-size:.8125rem;
+}
+
+/* ---------- 追加欄（常設） ---------- */
+#addbar{
+  position:sticky; top:0; z-index:20;
+  background:var(--bg);
+  border-bottom:1px solid var(--line);
+  padding:.75rem 1rem;
+  padding-top:max(.75rem, env(safe-area-inset-top));
+}
+body.dbg #addbar{ padding-top:.75rem; }
+
+/* 文字サイズを大きくすると1行に収まらなくなる。折り返して逃がす。
+   名前が1行を占め、間隔と「追加」が次の行に落ちる */
+#addform{ display:flex; gap:.5rem; align-items:stretch; flex-wrap:wrap; }
+
+#addName{ flex:1 1 6rem; min-width:0; }
+#addInterval{ flex:0 1 4.5rem; min-width:3.5rem; text-align:center; }
+
+input[type=text], input[type=date], textarea{
+  font:inherit;
+  font-size:1rem;                 /* 16px以上。これ未満だとiOSがフォーカス時に拡大する */
+  letter-spacing:inherit;
+  color:var(--text);
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:.55rem .75rem;
+  -webkit-user-select:text; user-select:text;
+  width:100%;
+  min-height:44px;
+}
+textarea{ line-height:1.5; resize:vertical; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.875rem; }
+
+.btn{
+  border:1px solid var(--line);
+  background:var(--surface);
+  border-radius:12px;
+  padding:.5rem 1rem;
+  min-height:44px;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.btn:active{ background:var(--press); }
+.btn.solid{ background:var(--press); border-color:transparent; }   /* 「保存」等。アクセントは使わない */
+.btn.accent{ background:var(--accent); color:var(--accent-ink); border-color:transparent; }
+.btn.accent:active{ filter:brightness(.94); }
+.btn.quiet{ background:none; border-color:transparent; color:var(--muted); }
+
+#btnAdd{ flex:0 0 auto; }
+
+/* ---------- 通知（隔離・保存失敗）。警告色は使わない ---------- */
+.notice{
+  margin:0; padding:.75rem 1rem;
+  background:var(--press);
+  color:var(--muted);
+  font-size:.875rem;
+  line-height:1.6;
+  border-bottom:1px solid var(--line);
+}
+
+/* ---------- 一覧 ---------- */
+#main{
+  touch-action:pan-y;                    /* 縦スクロールのみ。ダブルタップ拡大を殺す */
+  padding:0 1rem;
+  padding-bottom:calc(env(safe-area-inset-bottom) + 6rem);
+}
+
+h2.sec{
+  font-size:.8125rem;
+  font-weight:500;
+  letter-spacing:.16em;
+  color:var(--muted);
+  margin:1.5rem 0 .5rem;
+}
+
+ul.list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.5rem; }
+
+li.row{
+  display:flex; align-items:stretch;
+  background:var(--surface);
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 1px 2px var(--shadow);
+}
+
+.row-main{
+  position:relative;
+  flex:1 1 auto; min-width:0;
+  display:flex; align-items:center; gap:.6rem;
+  background:none; border:0; margin:0;
+  padding:.7rem .25rem .7rem .9rem;
+  min-height:44px;
+  text-align:left;
+  cursor:pointer;
+  touch-action:manipulation;
+  -webkit-touch-callout:none;                       /* 長押しで「コピー/調べる」を出さない */
+  -webkit-user-select:none; user-select:none;       /* 選択と虫めがねを出さない */
+  -webkit-tap-highlight-color:transparent;
+  overflow:hidden;
+}
+.row-main:active{ background:var(--press); }        /* 指への直接応答。アクセント色は使わない */
+
+/* 文字サイズを大きくすると「あと◯日」に押されて名前が細い縦書きになる。
+   折り返しを許して、収まらないときは「あと◯日」を下の行へ落とす */
+.row-main{ flex-wrap:wrap; }
+.row-main .emoji{ flex:0 0 auto; font-size:1.15rem; line-height:1; }
+.row-main .nm{ flex:1 1 5rem; min-width:0; overflow-wrap:anywhere; }
+.row-main .left{ flex:0 0 auto; margin-left:auto; font-size:.8125rem; color:var(--muted); letter-spacing:.02em; }
+
+.row-edit{
+  flex:0 0 auto;
+  width:44px; min-height:44px;
+  background:none; border:0; margin:0; padding:0;
+  color:var(--muted);
+  font-size:1.1rem; line-height:1;
+  cursor:pointer;
+  touch-action:manipulation;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none; user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.row-edit:active{ background:var(--press); }
+
+p.empty{ color:var(--muted); font-size:.9375rem; line-height:1.8; margin:.5rem 0 0; }
+
+/* ---------- 完了の演出 ---------- */
+.row-main::after{
+  content:"";
+  position:absolute;
+  left:var(--px,50%); top:var(--py,50%);
+  width:0; height:0;
+  border-radius:999px;
+  background:rgba(var(--accent-rgb),.35);
+  transform:translate(-50%,-50%) scale(0);
+  opacity:0;
+  pointer-events:none;
+}
+li.row.doing{ pointer-events:none; }
+li.row.doing .row-main{
+  transform:translateY(2px) scale(.97);
+  background:rgba(var(--accent-rgb),.12);
+  transition:transform 140ms cubic-bezier(.34,.1,.3,1), background-color 140ms linear;
+}
+li.row.doing .row-main::after{
+  width:180px; height:180px;
+  animation:bloom 320ms cubic-bezier(.2,.7,.3,1) forwards;
+}
+@keyframes bloom{
+  from{ transform:translate(-50%,-50%) scale(0);  opacity:.35; }
+  to  { transform:translate(-50%,-50%) scale(1);  opacity:0; }
+}
+li.row.fold{
+  height:0 !important; opacity:0; margin:0 !important; min-height:0;
+  overflow:hidden;
+  transform:scaleY(.85);
+  transition:height 120ms ease-in, opacity 120ms ease-in, transform 120ms ease-in;
+}
+
+#catpop{
+  position:fixed; z-index:60; pointer-events:none;
+  font-size:2rem; line-height:1;
+  transform:translate(-50%,-50%);
+  animation:catpop 420ms cubic-bezier(.2,.9,.3,1.2) forwards;
+}
+@keyframes catpop{
+  0%  { transform:translate(-50%,-50%) scale(.4);              opacity:0; }
+  30% { transform:translate(-50%,-60%) scale(1.15);            opacity:1; }
+  55% { transform:translate(-50%,-72%) scale(1);               opacity:1; }
+  100%{ transform:translate(-50%,-92%) scale(.95);             opacity:0; }
+}
+
+/* ---------- ぜんぶ寝てる（このアプリで唯一のご褒美画面） ---------- */
+.allclear{
+  position:relative;
+  margin:.25rem 0 0;
+  padding:1.5rem 1rem 1.5rem;
+  border-radius:28px;
+  background:radial-gradient(120% 95% at 50% 38%, var(--warm-1), var(--warm-2));
+  box-shadow:inset 0 -16px 26px -20px var(--shadow),
+             inset 0 1px 0 rgba(255,255,255,.35),
+             0 1px 3px var(--shadow);
+  text-align:center;
+  overflow:hidden;
+}
+.allclear::before{                       /* やわらかい光。アクセントは10%以下でだけ使う */
+  content:"";
+  position:absolute; left:50%; top:46%;
+  width:min(80%,330px); height:170px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(closest-side, rgba(var(--accent-rgb),.10), rgba(var(--accent-rgb),0));
+  animation:glow 6s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes glow{
+  0%,100%{ opacity:.55; transform:translate(-50%,-50%) scale(1); }
+  50%    { opacity:1;   transform:translate(-50%,-50%) scale(1.06); }
+}
+.allclear .stage{ position:relative; height:148px; }
+.allclear .cat{
+  position:absolute; left:50%; bottom:22px;
+  transform:translateX(-50%);
+  transform-origin:50% 100%;
+  font-size:clamp(56px,18vw,88px); line-height:1;
+  filter:drop-shadow(0 7px 9px var(--catshadow));
+  animation:breathe 4s ease-in-out infinite;
+}
+@keyframes breathe{
+  0%,100%{ transform:translateX(-50%) scale(1); }
+  50%    { transform:translateX(-50%) scale(1.035); }
+}
+.allclear .ground{                        /* 接地影。呼吸と逆位相。これが「重さ」を出す */
+  position:absolute; left:50%; bottom:12px;
+  width:46%; max-width:150px; height:17px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:radial-gradient(closest-side, var(--catshadow), rgba(0,0,0,0));
+  animation:ground 4s ease-in-out infinite;
+  animation-delay:-2s;
+}
+@keyframes ground{
+  0%,100%{ transform:translateX(-50%) scaleX(1);   opacity:1; }
+  50%    { transform:translateX(-50%) scaleX(.93); opacity:.75; }
+}
+/* 💤 は同じ所から出て同じ速さで昇る。等間隔だからこそ「寝息」に読める。
+   大きさだけ変えて機械的にならないようにしている。 */
+.allclear .z{
+  position:absolute; left:60%; bottom:88px;
+  opacity:0; line-height:1;
+  animation:drift 3.9s linear infinite;
+}
+.allclear .z1{ font-size:15px; margin-left:-2px; animation-delay:0s;   }
+.allclear .z2{ font-size:19px; margin-left:3px;  animation-delay:1.3s; }
+.allclear .z3{ font-size:13px; margin-left:-5px; animation-delay:2.6s; }
+@keyframes drift{
+  0%  { transform:translate(0,0) scale(.6);          opacity:0;   }
+  14% {                                              opacity:.85; }
+  72% {                                              opacity:.85; }
+  100%{ transform:translate(28px,-50px) scale(1.05); opacity:0;   }
+}
+.allclear p{
+  margin:.35rem 0 0;
+  font-size:clamp(1.35rem,6vw,1.75rem);
+  font-weight:500;
+  letter-spacing:.14em;
+  color:var(--muted);
+}
+.allclear.enter{ animation:cardin 320ms cubic-bezier(.2,.9,.3,1.2) both; }
+@keyframes cardin{
+  from{ opacity:0; transform:translateY(14px); }
+  to  { opacity:1; transform:none; }
+}
+
+/* ---------- 取り消しバー ---------- */
+#undobar{
+  position:fixed; z-index:50;
+  left:1rem; right:1rem;
+  bottom:calc(env(safe-area-inset-bottom) + .75rem);
+  display:flex; align-items:center; gap:.75rem;
+  background:var(--surface);
+  border-radius:16px;
+  box-shadow:0 4px 16px var(--shadow);
+  padding:.6rem .6rem .6rem 1rem;
+  overflow:hidden;
+}
+#undobar[hidden]{ display:none; }
+#undoText{ flex:1 1 auto; min-width:0; font-size:.9375rem; color:var(--muted);
+           overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+#btnUndo{ flex:0 0 auto; }
+#undobar .bar{
+  position:absolute; left:0; bottom:0; height:2px; width:100%;
+  background:rgba(var(--accent-rgb),.35);
+  transform-origin:0 50%;
+}
+#undobar.run .bar{ animation:drain 5s linear forwards; }
+@keyframes drain{ from{ transform:scaleX(1); } to{ transform:scaleX(0); } }
+
+/* ---------- データ（書き出す / 読み込む） ---------- */
+#dataPanel{
+  margin:2.5rem 0 0;
+  border-top:1px solid var(--line);
+  padding-top:.5rem;
+  font-size:.9375rem;
+}
+#dataPanel summary{
+  cursor:pointer; color:var(--muted); padding:.6rem 0; min-height:44px;
+  display:flex; align-items:center; letter-spacing:.1em;
+}
+#dataPanel h3{ font-size:.8125rem; font-weight:500; letter-spacing:.14em; color:var(--muted); margin:1.25rem 0 .5rem; }
+.data-body > .btn{ margin-top:.5rem; }
+.note{ color:var(--muted); font-size:.8125rem; line-height:1.7; margin:.35rem 0 0; }
+.confirm{
+  margin-top:.75rem; padding:.85rem 1rem;
+  background:var(--press); border-radius:14px;
+}
+.confirm p{ margin:0 0 .6rem; font-size:.9375rem; line-height:1.7; }
+.confirm-btns{ display:flex; gap:.5rem; justify-content:flex-end; }
+
+/* ---------- 編集シート ---------- */
+#scrim{
+  position:fixed; inset:0; z-index:70;
+  background:rgba(40,30,25,.35);
+  animation:fade 220ms ease both;
+}
+#scrim[hidden], #sheet[hidden]{ display:none; }
+@keyframes fade{ from{opacity:0} to{opacity:1} }
+
+#sheet{
+  position:fixed; z-index:71;
+  left:0; right:0; bottom:0;
+  max-height:88vh; overflow:auto;
+  background:var(--bg);
+  border-radius:22px 22px 0 0;
+  padding:1rem 1.15rem calc(env(safe-area-inset-bottom) + 1.15rem);
+  box-shadow:0 -6px 24px var(--shadow);
+  animation:sheetin 220ms cubic-bezier(.2,.8,.3,1) both;
+}
+@keyframes sheetin{ from{ transform:translateY(100%); } to{ transform:none; } }
+#sheet h2{ font-size:1rem; font-weight:500; letter-spacing:.1em; margin:.25rem 0 1rem; }
+#sheet label{ display:block; font-size:.8125rem; color:var(--muted); letter-spacing:.1em; margin:.9rem 0 .3rem; }
+#sheetErr{
+  margin:.9rem 0 0; padding:.7rem .9rem;
+  background:var(--press); border-radius:12px;
+  font-size:.875rem; line-height:1.7;
+}
+#sheetErr[hidden]{ display:none; }
+[aria-invalid="true"]{ outline:2px solid var(--muted); outline-offset:1px; }  /* 赤は使わない */
+.sheet-btns{ display:flex; align-items:center; gap:.5rem; margin-top:1.25rem; }
+.sheet-btns .spacer{ flex:1 1 auto; }
+#delConfirm[hidden], #importConfirm[hidden], #quarantineWrap[hidden],
+#importMsg[hidden], #exportMsg[hidden], #dbgbar[hidden], .notice[hidden]{ display:none; }
+
+/* ---------- 動きを減らす設定への追従 ---------- */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+  }
+  /* 静止した一枚絵として成立させる。省略版に見せない */
+  .allclear::before{ animation:none !important; opacity:.8; }
+  .allclear .cat, .allclear .ground{ animation:none !important; }
+  /* 寝息は2つだけ静止で置く。1つだと「寝ている」に読めない */
+  .allclear .z1{ animation:none !important; opacity:.85; transform:translate(4px,-8px)  scale(.8); }
+  .allclear .z2{ animation:none !important; opacity:.6;  transform:translate(20px,-34px) scale(1); }
+  .allclear .z3{ animation:none !important; display:none; }
+  .allclear.enter{ animation:none !important; }
+  #undobar.run .bar{ animation:none !important; }
+}
+
+#testout{
+  margin:1rem; padding:1rem;
+  background:var(--surface); border-radius:12px;
+  font-size:.8125rem; line-height:1.6; white-space:pre-wrap;
+  overflow-wrap:anywhere;
+}
+#testout[hidden]{ display:none; }
+</style>
+</head>
+<body>
+
+<div id="dbgbar" hidden>
+  <span id="dbgText"></span>
+  <button type="button" id="dbgStop">やめる</button>
+</div>
+
+<p class="notice" id="noticeLoad" hidden></p>
+<p class="notice" id="noticeSave" hidden></p>
+
+<header id="addbar">
+  <form id="addform" autocomplete="off">
+    <input id="addName" type="text" placeholder="名前" aria-label="名前" enterkeyhint="done">
+    <input id="addInterval" type="text" inputmode="numeric" pattern="[0-9]*" placeholder="間隔" aria-label="間隔（日）" enterkeyhint="done">
+    <button id="btnAdd" class="btn accent" type="submit">追加</button>
+  </form>
+  <p class="note" id="addErr" hidden role="alert"></p>
+</header>
+
+<main id="main">
+  <section id="dueSection">
+    <h2 class="sec">いま出てるもの</h2>
+    <ul class="list" id="dueList"></ul>
+    <div id="dueExtra"></div>
+  </section>
+
+  <section id="laterSection">
+    <h2 class="sec">まだ先</h2>
+    <ul class="list" id="laterList"></ul>
+  </section>
+
+  <p class="empty" id="emptyMsg" hidden>まだ何も登録されていない。上の欄に名前と間隔を入れて追加する。</p>
+
+  <details id="dataPanel">
+    <summary>データ</summary>
+    <div class="data-body">
+      <p class="note">iPhoneは長く使わないと保存データを消すことがある。ときどき書き出して控える。</p>
+
+      <h3>書き出す</h3>
+      <textarea id="exportBox" rows="6" readonly aria-label="書き出したデータ"></textarea>
+      <button class="btn" type="button" id="btnExport">書き出す</button>
+      <p class="note" id="exportMsg" hidden></p>
+
+      <h3>読み込む</h3>
+      <textarea id="importBox" rows="6" placeholder="ここに貼りつける" aria-label="読み込むデータ"></textarea>
+      <button class="btn" type="button" id="btnImport">読み込む</button>
+      <p class="note" id="importMsg" hidden role="alert"></p>
+      <div class="confirm" id="importConfirm" hidden>
+        <p id="importConfirmText"></p>
+        <div class="confirm-btns">
+          <button class="btn" type="button" id="btnImportYes">置きかえる</button>
+          <button class="btn solid" type="button" id="btnImportNo">やめる</button>
+        </div>
+      </div>
+
+      <div id="quarantineWrap" hidden>
+        <h3>読めなかったデータ</h3>
+        <p class="note">このアプリでは読めなかったが、消していない。コピーして手で直せる。</p>
+        <textarea id="quarantineBox" rows="6" readonly aria-label="読めなかったデータ"></textarea>
+        <button class="btn" type="button" id="btnDropCorrupt" hidden>壊れたデータを捨てて保存する</button>
+      </div>
+    </div>
+  </details>
+</main>
+
+<span id="doneHint" class="sr-only">タップで完了にする</span>
+
+<div id="undobar" role="status" aria-live="polite" hidden>
+  <span id="undoText"></span>
+  <button class="btn accent" type="button" id="btnUndo">取り消し</button>
+  <span class="bar" aria-hidden="true"></span>
+</div>
+
+<div id="scrim" hidden></div>
+<div id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" tabindex="-1" hidden>
+  <h2 id="sheetTitle">タスクの設定</h2>
+
+  <label for="fName">なまえ</label>
+  <input id="fName" type="text" autocomplete="off">
+
+  <label for="fInterval">間隔（日）</label>
+  <input id="fInterval" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+
+  <label for="fDate">さいごにやった日</label>
+  <input id="fDate" type="date">
+
+  <label for="fEmoji">絵文字</label>
+  <input id="fEmoji" type="text" maxlength="8" autocomplete="off">
+
+  <p id="sheetErr" role="alert" hidden></p>
+
+  <div class="sheet-btns" id="sheetBtns">
+    <button class="btn quiet" type="button" id="btnDelete">削除</button>
+    <span class="spacer"></span>
+    <button class="btn" type="button" id="btnClose">閉じる</button>
+    <!-- 「保存」にアクセント色は使わない。アクセントは追加・取り消し・完了演出に予約されている -->
+    <button class="btn solid" type="button" id="btnSave">保存</button>
+  </div>
+
+  <div class="confirm" id="delConfirm" hidden>
+    <p>このタスクを消す。元に戻せない。</p>
+    <div class="confirm-btns">
+      <button class="btn" type="button" id="btnDelYes">消す</button>
+      <button class="btn solid" type="button" id="btnDelNo">やめる</button>
+    </div>
+  </div>
+</div>
+
+<template id="tplRow">
+  <li class="row">
+    <button class="row-main" type="button" aria-describedby="doneHint">
+      <span class="emoji" aria-hidden="true"></span>
+      <span class="nm"></span>
+      <span class="left"></span>
+    </button>
+    <button class="row-edit" type="button">…</button>
+  </li>
+</template>
+
+<pre id="testout" hidden></pre>
+
+<script>
+(function(){
+'use strict';
+
+/* =========================================================================
+   1. 日付
+   厳守：Date を文字列から構築しない。getUTC* と toISOString を使わない。
+   Date.UTC は「暦日 → 通し番号」の純粋関数としてのみ使う（両辺とも通すので
+   タイムゾーンが関与しない）。
+   ========================================================================= */
+
+function pad2(n){ return n < 10 ? '0' + n : '' + n; }
+
+function fmtLocal(d){
+  return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+}
+
+function realTodayStr(){ return fmtLocal(new Date()); }
+
+/* 厳密パース → {y,m,d} または null。2026-02-31 は往復チェックで弾く */
+function parseDate(s){
+  if (typeof s !== 'string') return null;
+  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s);
+  if (!m) return null;
+  var y = +m[1], mo = +m[2], d = +m[3];
+  if (y < 1970 || y > 2999 || mo < 1 || mo > 12 || d < 1 || d > 31) return null;
+  var dt = new Date(y, mo - 1, d, 12, 0, 0, 0);      /* 正午アンカー */
+  if (dt.getFullYear() !== y || dt.getMonth() !== mo - 1 || dt.getDate() !== d) return null;
+  return { y:y, m:mo, d:d };
+}
+
+function isDateStr(s){ return parseDate(s) !== null; }
+
+/* N日加算。正午アンカーなのでDST遷移から11時間以上離れる（0時に遷移する地域も安全） */
+function addDays(s, n){
+  var p = parseDate(s);
+  if (!p) return null;
+  return fmtLocal(new Date(p.y, p.m - 1, p.d + n, 12, 0, 0, 0));
+}
+
+/* 暦日の通し番号。ローカル時刻をUTCへ変換しているのではない */
+function toEpochDay(s){
+  var p = parseDate(s);
+  if (!p) return NaN;
+  return Math.round(Date.UTC(p.y, p.m - 1, p.d) / 86400000);
+}
+
+function diffDays(a, b){ return toEpochDay(b) - toEpochDay(a); }
+
+/* 大小比較は文字列比較でよい。ゼロ埋め YYYY-MM-DD は辞書順＝時系列順 */
+
+/* 日付シミュレーション。URLハッシュだけで駆動し、保存しない。
+   #today=2026-09-01 または #today=+15 。有効な間は必ず画面上に見せる。 */
+var dbgToday = null;
+function todayStr(){ return dbgToday || realTodayStr(); }
+
+
+/* =========================================================================
+   2. 状態と永続化
+   ========================================================================= */
+
+var KEY = 'interval-tasks-v1';
+var SCHEMA = 1;
+
+var state = { tasks: [] };
+var quarantineRaw = null;     /* null でない = KEY に「解釈を拒んだ文字列」が残っている */
+var saveFailed = false;
+
+function newId(){
+  if (window.crypto && typeof crypto.randomUUID === 'function') return crypto.randomUUID();
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+}
+
+function envelope(){
+  return { app:'interval-tasks', version:SCHEMA, exportedAt:todayStr(), tasks:state.tasks };
+}
+
+function load(){
+  var raw = null;
+  try { raw = localStorage.getItem(KEY); } catch(e){ raw = null; }
+  if (raw === null || raw === '') return;
+
+  var parsed;
+  try { parsed = JSON.parse(raw); }
+  catch(e){ quarantineRaw = raw; return; }
+
+  if (parsed && !Array.isArray(parsed) && typeof parsed.version === 'number' && parsed.version > SCHEMA){
+    quarantineRaw = raw; return;
+  }
+  var arr = Array.isArray(parsed) ? parsed
+          : (parsed && typeof parsed === 'object' && Array.isArray(parsed.tasks)) ? parsed.tasks
+          : null;
+  if (!arr){ quarantineRaw = raw; return; }
+
+  var r = normalizeAll(arr);
+  state.tasks = r.tasks;
+  if (r.repaired > 0 || r.dropped > 0) loadRepairNote = r;
+}
+var loadRepairNote = null;
+
+/* 隔離中の最初の書き込みが元データを潰さないよう、先に退避コピーを作り、
+   読み戻して一致を確認してから KEY を書く。退避に失敗したら KEY に触らない。 */
+function save(){
+  var json;
+  try { json = JSON.stringify(envelope()); } catch(e){ return; }
+  try {
+    if (quarantineRaw !== null){
+      var bk = KEY + '.corrupt.' + fmtLocal(new Date()) + '.' + Date.now().toString(36);
+      localStorage.setItem(bk, quarantineRaw);
+      if (localStorage.getItem(bk) !== quarantineRaw) throw new Error('backup mismatch');
+      quarantineRaw = null;
+    }
+    localStorage.setItem(KEY, json);
+    saveFailed = false;
+  } catch(e){
+    saveFailed = true;
+  }
+  renderNotices();
+}
+
+function normalizeAll(arr){
+  var out = [], seen = {}, repaired = 0, dropped = 0;
+  var today = todayStr();
+  for (var i = 0; i < arr.length; i++){
+    var raw = arr[i];
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw)){ dropped++; continue; }
+    var name = typeof raw.name === 'string' ? raw.name.trim() : '';
+    var iv = raw.intervalDays;
+    if (!name || typeof iv !== 'number' || !isFinite(iv) || Math.floor(iv) !== iv || iv < 1){ dropped++; continue; }
+
+    var t = {}, k;
+    for (k in raw) if (Object.prototype.hasOwnProperty.call(raw, k)) t[k] = raw[k];  /* 未知フィールドを保持 */
+    var fixed = false;
+    t.name = name;
+    t.intervalDays = iv;
+    if (typeof t.createdAt !== 'string' || !isDateStr(t.createdAt)){ t.createdAt = today; fixed = true; }
+    if (typeof t.lastDoneDate !== 'string' || !isDateStr(t.lastDoneDate)){ t.lastDoneDate = t.createdAt; fixed = true; }
+    if (typeof t.id !== 'string' || !t.id || Object.prototype.hasOwnProperty.call(seen, t.id)){ t.id = newId(); fixed = true; }
+    if ('emoji' in t && typeof t.emoji !== 'string'){ delete t.emoji; fixed = true; }
+    if (typeof t.emoji === 'string' && t.emoji === '') delete t.emoji;
+    seen[t.id] = 1;
+    if (fixed) repaired++;
+    out.push(t);
+  }
+  return { tasks:out, repaired:repaired, dropped:dropped };
+}
+
+function validateImport(text){
+  var parsed;
+  try { parsed = JSON.parse(text); }
+  catch(e){
+    return { ok:false, error:'読み込めない。JSON として壊れている。書き出したときの文字列を、最初から最後まで貼り直す。' };
+  }
+  if (parsed && !Array.isArray(parsed) && typeof parsed === 'object' &&
+      typeof parsed.version === 'number' && parsed.version > SCHEMA){
+    return { ok:false, error:'新しい版のデータ。このアプリでは読めない。' };
+  }
+  var arr = Array.isArray(parsed) ? parsed
+          : (parsed && typeof parsed === 'object' && Array.isArray(parsed.tasks)) ? parsed.tasks
+          : null;
+  if (!arr){
+    return { ok:false, error:'形式が違う。tasks の配列が見つからない。書き出したデータをそのまま貼る。' };
+  }
+  var r = normalizeAll(arr);
+  if (r.tasks.length === 0){
+    return { ok:false, dropped:r.dropped, repaired:r.repaired,
+             error:'読み込める項目が0件。tasks の中に name と intervalDays を持つ項目が必要。' };
+  }
+  return { ok:true, tasks:r.tasks, repaired:r.repaired, dropped:r.dropped };
+}
+
+
+/* =========================================================================
+   3. 一覧の計算
+   ========================================================================= */
+
+/* 漢字は読みではなくコードポイント順に並ぶ。将来 reading を足すならここ1箇所 */
+function byName(a, b){ return a.name.localeCompare(b.name, 'ja'); }
+
+function computeView(today){
+  var due = [], later = [];
+  for (var i = 0; i < state.tasks.length; i++){
+    var t = state.tasks[i];
+    var nextDue = addDays(t.lastDoneDate, t.intervalDays);
+    if (nextDue === null) continue;
+    if (nextDue <= today){
+      var over = diffDays(nextDue, today);
+      due.push({ t:t, nextDue:nextDue, ratio:over / t.intervalDays });
+    } else {
+      later.push({ t:t, nextDue:nextDue, daysLeft:diffDays(today, nextDue) });
+    }
+  }
+  /* 同率のタイブレークは明示する。ソートの安定性に頼ると再描画で順序が揺れる */
+  due.sort(function(a,b){ return (b.ratio - a.ratio) || byName(a.t, b.t); });
+  later.sort(function(a,b){
+    return (a.nextDue < b.nextDue ? -1 : a.nextDue > b.nextDue ? 1 : 0) || byName(a.t, b.t);
+  });
+  return { due:due, later:later };
+}
+
+
+/* =========================================================================
+   4. 描画
+   ========================================================================= */
+
+var $ = function(id){ return document.getElementById(id); };
+var dueList = $('dueList'), laterList = $('laterList'), dueExtra = $('dueExtra');
+var tplRow = $('tplRow');
+
+var animating = 0, renderQueued = false, justCleared = false;
+var cachedToday = null;
+
+function render(){
+  if (animating > 0){ renderQueued = true; return; }
+  var today = todayStr();          /* 1フレーム内で1回だけ読む */
+  cachedToday = today;
+  var v = computeView(today);
+
+  fillList(dueList, v.due, false);
+  fillList(laterList, v.later, true);
+
+  dueExtra.textContent = '';
+  if (v.due.length === 0 && state.tasks.length > 0){
+    dueExtra.appendChild(buildAllClear(justCleared));
+  }
+  justCleared = false;
+
+  $('laterSection').hidden = v.later.length === 0;
+  $('dueSection').hidden   = state.tasks.length === 0;
+  $('emptyMsg').hidden     = state.tasks.length !== 0;
+
+  $('exportBox').value = JSON.stringify(envelope(), null, 2);
+  renderNotices();
+}
+
+function fillList(ul, items, showLeft){
+  ul.textContent = '';
+  for (var i = 0; i < items.length; i++){
+    var it = items[i], t = it.t;
+    var li = tplRow.content.firstElementChild.cloneNode(true);
+    li.dataset.id = t.id;
+
+    var em = li.querySelector('.emoji');
+    if (typeof t.emoji === 'string' && t.emoji !== ''){
+      em.textContent = t.emoji;                 /* 行頭の絵文字。読み上げからは外す */
+    } else {
+      em.remove();                              /* 無い場合は行頭に何も表示しない */
+    }
+    li.querySelector('.nm').textContent = t.name;
+
+    var left = li.querySelector('.left');
+    if (showLeft) left.textContent = 'あと' + it.daysLeft + '日';
+    else left.remove();                         /* 「いま出てるもの」に数字は出さない */
+
+    li.querySelector('.row-edit').setAttribute('aria-label', t.name + ' の設定');
+    ul.appendChild(li);
+  }
+}
+
+function buildAllClear(withEntrance){
+  var d = document.createElement('div');
+  d.className = 'allclear' + (withEntrance ? ' enter' : '');
+  d.innerHTML =
+    '<div class="stage">' +
+      '<span class="z z1" aria-hidden="true">💤</span>' +
+      '<span class="z z2" aria-hidden="true">💤</span>' +
+      '<span class="z z3" aria-hidden="true">💤</span>' +
+      '<span class="ground" aria-hidden="true"></span>' +
+      '<span class="cat" aria-hidden="true">🐱</span>' +
+    '</div>' +
+    '<p>ぜんぶ寝てる</p>';
+  return d;
+}
+
+function renderNotices(){
+  var nLoad = $('noticeLoad'), nSave = $('noticeSave');
+
+  if (quarantineRaw !== null){
+    nLoad.textContent = '前のデータが読み取れない形式だった。空の状態で始めている。'
+                      + '壊れたデータは消していない。下の「データ」で中身を見られる。';
+    nLoad.hidden = false;
+    $('quarantineWrap').hidden = false;
+    $('quarantineBox').value = quarantineRaw;
+    $('btnDropCorrupt').hidden = !saveFailed;
+    $('dataPanel').open = true;
+  } else if (loadRepairNote){
+    var parts = [];
+    if (loadRepairNote.repaired) parts.push(loadRepairNote.repaired + '件は項目が足りないので直した');
+    if (loadRepairNote.dropped)  parts.push(loadRepairNote.dropped + '件は名前か間隔がないので読み込まなかった');
+    nLoad.textContent = '保存されていたデータの一部に不足があった。' + parts.join('。') + '。';
+    nLoad.hidden = false;
+    $('quarantineWrap').hidden = true;
+  } else {
+    nLoad.hidden = true;
+    $('quarantineWrap').hidden = true;
+  }
+
+  if (saveFailed){
+    nSave.textContent = '保存できない。いまの変更は端末に残らない。下の「データ」で今の内容をコピーして控える。';
+    nSave.hidden = false;
+    $('dataPanel').open = true;
+  } else {
+    nSave.hidden = true;
+  }
+}
+
+
+/* =========================================================================
+   5. 追加
+   ========================================================================= */
+
+$('addform').addEventListener('submit', function(e){
+  e.preventDefault();
+  var nameEl = $('addName'), ivEl = $('addInterval'), err = $('addErr');
+  var name = nameEl.value.trim();
+  var ivRaw = ivEl.value.trim();
+
+  var msg = null, bad = null;
+  if (!name){ msg = 'なまえが空。1文字以上入れる。'; bad = nameEl; }
+  else if (name.length > 60){ msg = 'なまえが長すぎる。60文字までにする。'; bad = nameEl; }
+  else if (!/^\d+$/.test(ivRaw) || parseInt(ivRaw, 10) < 1){ msg = '間隔は1以上の整数で入れる。'; bad = ivEl; }
+  else if (parseInt(ivRaw, 10) > 3650){ msg = '間隔が大きすぎる。3650日までにする。'; bad = ivEl; }
+
+  nameEl.removeAttribute('aria-invalid');
+  ivEl.removeAttribute('aria-invalid');
+  if (msg){
+    err.textContent = msg; err.hidden = false;
+    bad.setAttribute('aria-invalid', 'true');
+    bad.focus();
+    return;
+  }
+  err.hidden = true;
+
+  var today = todayStr();
+  state.tasks.push({
+    id: newId(),
+    name: name,
+    intervalDays: parseInt(ivRaw, 10),
+    lastDoneDate: today,      /* 追加直後は「まだ先」に入る */
+    createdAt: today
+  });
+  save();
+  nameEl.value = '';
+  ivEl.value = '';
+  render();
+  nameEl.focus();
+});
+
+
+/* =========================================================================
+   6. ジェスチャ
+   完了は click で発火する。pointer 系は「拒否」にだけ使う。
+   pointerup で発火すると、約50ms後の合成clickが再描画で移動してきた別の行に
+   当たりうる（二重完了）。click に寄せるとその問題ごと消え、VoiceOverの
+   ダブルタップとキーボードのEnter/Spaceもそのまま動く。
+   ========================================================================= */
+
+var LONG_MS = 500, MOVE_PX = 10;
+var g = null;
+
+function onMove(e){
+  if (!g) return;
+  if (Math.abs(e.clientX - g.x) > MOVE_PX || Math.abs(e.clientY - g.y) > MOVE_PX){
+    g.veto = true;
+    clearTimeout(g.timer);
+  }
+}
+function onEnd(e){
+  if (!g) return;
+  clearTimeout(g.timer);
+  if (e.type === 'pointercancel') g.veto = true;   /* スクロールに奪われた */
+  window.removeEventListener('pointermove', onMove);
+  window.removeEventListener('pointerup', onEnd);
+  window.removeEventListener('pointercancel', onEnd);
+}
+
+document.addEventListener('pointerdown', function(e){
+  if (e.pointerType === 'mouse' && e.button !== 0) return;
+  var main = e.target.closest ? e.target.closest('.row-main') : null;
+  if (!main) return;
+  var li = main.closest('.row');
+  var r = main.getBoundingClientRect();
+  main.style.setProperty('--px', (e.clientX - r.left) + 'px');
+  main.style.setProperty('--py', (e.clientY - r.top) + 'px');
+  g = { main:main, id:li.dataset.id, x:e.clientX, y:e.clientY, veto:false, timer:0 };
+  g.timer = setTimeout(function(){
+    if (!g) return;
+    g.veto = true;
+    openSheet(g.id, main);
+  }, LONG_MS);
+  window.addEventListener('pointermove', onMove);
+  window.addEventListener('pointerup', onEnd);
+  window.addEventListener('pointercancel', onEnd);
+});
+
+document.addEventListener('click', function(e){
+  var edit = e.target.closest ? e.target.closest('.row-edit') : null;
+  if (edit){
+    openSheet(edit.closest('.row').dataset.id, edit);
+    return;
+  }
+  var main = e.target.closest ? e.target.closest('.row-main') : null;
+  if (!main) return;
+  var vetoed = g && g.main === main && g.veto;
+  g = null;
+  if (vetoed) return;
+  completeTask(main.closest('.row').dataset.id, main.closest('.row'), e);
+});
+
+/* 「…」では長押しタイマーを始めない */
+document.addEventListener('pointerdown', function(e){
+  if (e.target.closest && e.target.closest('.row-edit')) e.stopPropagation();
+}, true);
+
+/* 長押しのネイティブメニューを出さない */
+document.addEventListener('contextmenu', function(e){
+  if (e.target.closest && e.target.closest('.row')) e.preventDefault();
+});
+
+
+/* =========================================================================
+   7. 完了 と 取り消し
+   ========================================================================= */
+
+var undoState = null, undoTimer = 0;
+
+function reducedMotion(){
+  return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function completeTask(id, li, ev){
+  var t = findTask(id);
+  if (!t) return;
+  var today = todayStr();
+  if (t.lastDoneDate === today) return;      /* 同日の重複タップ：何も起きない */
+
+  var prev = t.lastDoneDate;
+  t.lastDoneDate = today;
+  save();                                    /* 演出より先に保存する */
+  showUndo(t.id, prev, t.name);
+
+  justCleared = computeView(today).due.length === 0;
+
+  if (reducedMotion() || !li){ render(); return; }
+
+  animating++;
+  li.classList.add('doing');
+  spawnCat(ev);
+
+  setTimeout(function(){
+    li.style.height = li.offsetHeight + 'px';
+    void li.offsetWidth;                     /* リフローを強制してから畳む */
+    li.classList.add('fold');
+  }, 140);
+
+  /* transitionend は要素の除去やバックグラウンド化で取りこぼされる。
+     取りこぼすと animating が0に戻らず再描画が永久に止まるので、必ずタイマーで閉じる */
+  setTimeout(endAnim, 270);
+}
+
+function endAnim(){
+  if (animating > 0) animating--;
+  if (animating === 0 && renderQueued){ renderQueued = false; render(); }
+  else if (animating === 0) render();
+}
+
+function spawnCat(ev){
+  var x, y;
+  if (ev && typeof ev.clientX === 'number' && (ev.clientX || ev.clientY)){
+    x = ev.clientX; y = ev.clientY;
+  } else {
+    x = window.innerWidth / 2; y = window.innerHeight / 2;
+  }
+  var s = document.createElement('span');
+  s.id = 'catpop';
+  s.setAttribute('aria-hidden', 'true');
+  s.textContent = '🐱';
+  s.style.left = x + 'px';
+  s.style.top = y + 'px';
+  document.body.appendChild(s);
+  s.addEventListener('animationend', function(){ if (s.parentNode) s.parentNode.removeChild(s); });
+  setTimeout(function(){ if (s.parentNode) s.parentNode.removeChild(s); }, 900);
+}
+
+function findTask(id){
+  for (var i = 0; i < state.tasks.length; i++) if (state.tasks[i].id === id) return state.tasks[i];
+  return null;
+}
+
+function showUndo(id, prevDate, name){
+  clearTimeout(undoTimer);
+  undoState = { id:id, prevDate:prevDate, expiresAt:Date.now() + 5000 };
+  var bar = $('undobar');
+  $('undoText').textContent = name + ' を完了にした';
+  bar.hidden = false;
+  bar.classList.remove('run');
+  void bar.offsetWidth;
+  bar.classList.add('run');
+  undoTimer = setTimeout(hideUndo, 5000);
+}
+
+function hideUndo(){
+  clearTimeout(undoTimer);
+  undoState = null;
+  var bar = $('undobar');
+  bar.hidden = true;
+  bar.classList.remove('run');
+}
+
+$('btnUndo').addEventListener('click', function(){
+  if (!undoState) return;
+  var t = findTask(undoState.id);
+  var prev = undoState.prevDate;
+  hideUndo();
+  if (!t) return;                            /* 対象が消えていたら何もしない */
+  t.lastDoneDate = prev;                     /* 差分ではなくスナップショットを書き戻す */
+  save();
+  render();
+});
+
+/* VoiceOverやスイッチコントロールでは5秒以内に到達できない。フォーカス中は止める */
+$('undobar').addEventListener('focusin', function(){ clearTimeout(undoTimer); });
+$('undobar').addEventListener('focusout', function(){
+  if (!undoState) return;
+  clearTimeout(undoTimer);
+  undoTimer = setTimeout(hideUndo, 2000);
+});
+
+
+/* =========================================================================
+   8. 編集シート
+   ========================================================================= */
+
+var sheetTaskId = null, sheetOpener = null, sheetGuard = 0, scrollY = 0;
+
+function openSheet(id, opener){
+  var t = findTask(id);
+  if (!t) return;
+  hideUndo();                                /* シートは lastDoneDate を直接見せる。裏で戻さない */
+  sheetTaskId = id;
+  sheetOpener = opener || null;
+
+  $('fName').value = t.name;
+  $('fInterval').value = String(t.intervalDays);
+  $('fDate').value = t.lastDoneDate;
+  $('fEmoji').value = typeof t.emoji === 'string' ? t.emoji : '';
+  clearSheetErr();
+  $('delConfirm').hidden = true;
+  $('sheetBtns').hidden = false;
+
+  scrollY = window.scrollY || 0;
+  document.body.style.position = 'fixed';
+  document.body.style.top = (-scrollY) + 'px';
+  document.body.style.left = '0';
+  document.body.style.right = '0';
+
+  var main = $('main');
+  if ('inert' in HTMLElement.prototype) main.inert = true;
+  else main.setAttribute('aria-hidden', 'true');
+
+  $('scrim').hidden = false;
+  $('sheet').hidden = false;
+  /* 長押しで開いた直後の pointerup が合成clickを起こすので、少しの間だけ受け付けない */
+  $('scrim').style.pointerEvents = 'none';
+  $('sheet').style.pointerEvents = 'none';
+  clearTimeout(sheetGuard);
+  sheetGuard = setTimeout(function(){
+    $('scrim').style.pointerEvents = '';
+    $('sheet').style.pointerEvents = '';
+  }, 300);
+
+  /* 名前欄にはフォーカスしない。iOSのキーボードが即座に跳ね上がって乱暴だから */
+  $('sheet').focus();
+}
+
+function closeSheet(){
+  if ($('sheet').hidden) return;
+  $('sheet').hidden = true;
+  $('scrim').hidden = true;
+  $('delConfirm').hidden = true;
+  $('sheetBtns').hidden = false;
+
+  var main = $('main');
+  if ('inert' in HTMLElement.prototype) main.inert = false;
+  else main.removeAttribute('aria-hidden');
+
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.left = '';
+  document.body.style.right = '';
+  window.scrollTo(0, scrollY);
+
+  var op = sheetOpener;
+  sheetTaskId = null; sheetOpener = null;
+  if (op && document.contains(op)) op.focus();
+}
+
+function clearSheetErr(){
+  $('sheetErr').hidden = true;
+  ['fName','fInterval','fDate','fEmoji'].forEach(function(id){ $(id).removeAttribute('aria-invalid'); });
+}
+
+function sheetErr(msg, fieldId){
+  $('sheetErr').textContent = msg;
+  $('sheetErr').hidden = false;
+  if (fieldId) $(fieldId).setAttribute('aria-invalid', 'true');
+}
+
+function graphemeCount(s){
+  if (window.Intl && typeof Intl.Segmenter === 'function'){
+    var seg = new Intl.Segmenter('ja', { granularity:'grapheme' });
+    var n = 0, it = seg.segment(s)[Symbol.iterator]();
+    for (var r = it.next(); !r.done; r = it.next()) n++;
+    return n;
+  }
+  return s.length <= 8 ? 1 : 2;              /* 判定できない環境では寛容側に倒す */
+}
+
+$('btnSave').addEventListener('click', function(){
+  var t = findTask(sheetTaskId);
+  if (!t){ closeSheet(); return; }
+  clearSheetErr();
+
+  var name = $('fName').value.trim();
+  var ivRaw = $('fInterval').value.trim();
+  var date = $('fDate').value.trim();
+  var emoji = $('fEmoji').value.trim();
+
+  if (!name)                                     return sheetErr('なまえが空。1文字以上入れる。', 'fName');
+  if (name.length > 60)                          return sheetErr('なまえが長すぎる。60文字までにする。', 'fName');
+  if (!/^\d+$/.test(ivRaw) || +ivRaw < 1)        return sheetErr('間隔は1以上の整数で入れる。', 'fInterval');
+  if (+ivRaw > 3650)                             return sheetErr('間隔が大きすぎる。3650日までにする。', 'fInterval');
+  if (!date)                                     return sheetErr('さいごにやった日が空。日付を入れる。', 'fDate');
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date))         return sheetErr('日付の形式が違う。YYYY-MM-DD で入れる。', 'fDate');
+  if (!isDateStr(date)){
+    var y = +date.slice(0,4);
+    if (y < 1970 || y > 2999)                    return sheetErr('日付が範囲の外。1970年から2999年で入れる。', 'fDate');
+    return sheetErr('日付の形式が違う。YYYY-MM-DD で入れる。', 'fDate');
+  }
+  if (emoji && graphemeCount(emoji) > 1)         return sheetErr('絵文字は1文字にする。', 'fEmoji');
+
+  t.name = name;
+  t.intervalDays = parseInt(ivRaw, 10);
+  t.lastDoneDate = date;                         /* 未来日も黙って許可する。先送りになるだけ */
+  if (emoji) t.emoji = emoji; else delete t.emoji;
+
+  save();
+  closeSheet();
+  render();
+});
+
+$('btnClose').addEventListener('click', closeSheet);
+$('scrim').addEventListener('click', closeSheet);
+
+$('btnDelete').addEventListener('click', function(){
+  $('sheetBtns').hidden = true;
+  $('delConfirm').hidden = false;
+  $('btnDelNo').focus();
+});
+$('btnDelNo').addEventListener('click', function(){
+  $('delConfirm').hidden = true;
+  $('sheetBtns').hidden = false;
+  $('btnDelete').focus();
+});
+$('btnDelYes').addEventListener('click', function(){
+  var id = sheetTaskId;
+  state.tasks = state.tasks.filter(function(x){ return x.id !== id; });
+  save();
+  closeSheet();
+  render();
+});
+
+document.addEventListener('keydown', function(e){
+  if ($('sheet').hidden) return;
+  if (e.key === 'Escape'){ e.preventDefault(); closeSheet(); return; }
+  if (e.key !== 'Tab') return;
+  var f = $('sheet').querySelectorAll('input,button');
+  var vis = [];
+  for (var i = 0; i < f.length; i++) if (f[i].offsetParent !== null) vis.push(f[i]);
+  if (!vis.length) return;
+  var first = vis[0], last = vis[vis.length - 1];
+  if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+});
+
+
+/* =========================================================================
+   9. 書き出す / 読み込む
+   ========================================================================= */
+
+$('btnExport').addEventListener('click', function(){
+  var box = $('exportBox');
+  box.value = JSON.stringify(envelope(), null, 2);
+  var msg = $('exportMsg');
+  function fallback(){
+    box.focus();
+    box.setSelectionRange(0, box.value.length);   /* iOSではここでコピーの吹き出しが出る */
+    msg.textContent = '全部を選んだ。長押しでコピーする。';
+    msg.hidden = false;
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(box.value).then(function(){
+      msg.textContent = 'コピーした。';
+      msg.hidden = false;
+    }, fallback);
+  } else {
+    fallback();
+  }
+});
+
+var pendingImport = null;
+
+$('btnImport').addEventListener('click', function(){
+  var text = $('importBox').value.trim();
+  var msg = $('importMsg');
+  $('importConfirm').hidden = true;
+  pendingImport = null;
+
+  if (!text){
+    msg.textContent = '読み込む文字列が空。書き出したデータを貼りつける。';
+    msg.hidden = false;
+    return;
+  }
+  var r = validateImport(text);
+  if (!r.ok){
+    msg.textContent = r.error;
+    msg.hidden = false;
+    return;
+  }
+  msg.hidden = true;
+  pendingImport = r;
+
+  var parts = [r.tasks.length + '件を読み込む。'];
+  if (r.repaired) parts.push(r.repaired + '件は項目が足りないので直した。');
+  if (r.dropped)  parts.push(r.dropped + '件は名前か間隔がないので読み込まない。');
+  parts.push('いまの' + state.tasks.length + '件は消える。');
+  $('importConfirmText').textContent = parts.join('');
+  $('importConfirm').hidden = false;
+  $('btnImportNo').focus();
+});
+
+$('btnImportNo').addEventListener('click', function(){
+  pendingImport = null;
+  $('importConfirm').hidden = true;
+});
+
+$('btnImportYes').addEventListener('click', function(){
+  if (!pendingImport) return;
+  hideUndo();
+  state.tasks = pendingImport.tasks;
+  pendingImport = null;
+  loadRepairNote = null;
+  save();
+  $('importConfirm').hidden = true;
+  $('importBox').value = '';
+  $('dataPanel').open = false;
+  render();
+});
+
+/* 隔離データを捨てる唯一の経路。明示的に押されたときだけ */
+$('btnDropCorrupt').addEventListener('click', function(){
+  quarantineRaw = null;
+  save();
+  render();
+});
+
+
+/* =========================================================================
+   10. 日付の切り替わり
+   ========================================================================= */
+
+var midnightTimer = 0;
+
+function scheduleMidnight(){
+  clearTimeout(midnightTimer);
+  var now = new Date();
+  var next = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 2, 0);
+  midnightTimer = setTimeout(checkRollover, Math.max(1000, next - now));
+}
+
+function checkRollover(){
+  var t = todayStr();
+  if (t !== cachedToday) render();
+  scheduleMidnight();
+}
+
+document.addEventListener('visibilitychange', function(){
+  if (document.visibilityState !== 'visible') return;
+  if (undoState && Date.now() > undoState.expiresAt) hideUndo();   /* 40分後に蘇らせない */
+  checkRollover();
+  /* ここで保存はしない。変更のたびに同期保存しているので流すものが無く、
+     隔離中だけは「ただ開き直しただけ」で KEY が空リストに置き換わってしまう */
+});
+window.addEventListener('pageshow', checkRollover);
+/* 開いたまま端末のタイムゾーンが変わった場合を拾えるのはこれだけ */
+setInterval(checkRollover, 60000);
+
+window.addEventListener('storage', function(e){
+  if (e.key !== KEY) return;
+  hideUndo();
+  quarantineRaw = null; loadRepairNote = null;
+  state.tasks = [];
+  load();
+  render();
+});
+
+
+/* =========================================================================
+   11. 日付シミュレーションと自己テスト（URLハッシュだけで駆動、保存しない）
+   ========================================================================= */
+
+function applyHash(){
+  var h = location.hash || '';
+  dbgToday = null;
+  var m = /(?:^#|&)today=([^&]+)/.exec(h);
+  if (m){
+    var v = decodeURIComponent(m[1]);
+    if (/^[+-]\d+$/.test(v)) dbgToday = addDays(realTodayStr(), parseInt(v, 10));
+    else if (isDateStr(v)) dbgToday = v;
+  }
+  var bar = $('dbgbar');
+  if (dbgToday){
+    $('dbgText').textContent = '日付を ' + dbgToday + ' として表示している';
+    bar.hidden = false;
+    document.body.classList.add('dbg');
+  } else {
+    bar.hidden = true;
+    document.body.classList.remove('dbg');
+  }
+}
+
+$('dbgStop').addEventListener('click', function(){
+  location.hash = '';
+  location.reload();
+});
+
+window.addEventListener('hashchange', function(){
+  applyHash();
+  render();
+  if (/(?:^#|&)selftest/.test(location.hash)) runSelfTest();
+});
+
+function runSelfTest(){
+  var out = [], pass = 0, fail = 0;
+  function t(label, cond){
+    if (cond){ pass++; out.push('ok   ' + label); }
+    else     { fail++; out.push('NG   ' + label); }
+  }
+  t('DST 春（3/7→3/8）',        addDays('2026-03-07', 1) === '2026-03-08');
+  t('DST 秋（11/1→11/2）',      addDays('2026-11-01', 1) === '2026-11-02');
+  t('DST をまたぐ差分',          diffDays('2026-03-07', '2026-03-09') === 2);
+  t('月境界 非閏',              addDays('2026-02-28', 1) === '2026-03-01');
+  t('月境界 閏',                addDays('2024-02-28', 1) === '2024-02-29');
+  t('年境界 前',                addDays('2026-12-31', 1) === '2027-01-01');
+  t('年境界 後',                addDays('2026-01-01', -1) === '2025-12-31');
+  t('年をまたぐ差分',            diffDays('2025-12-31', '2026-01-01') === 1);
+  t('差分は符号付き',            diffDays('2026-01-10', '2026-01-01') === -9);
+  t('400日の往復',              addDays(addDays('2026-08-06', 400), -400) === '2026-08-06');
+  t('存在しない日付を拒む',       parseDate('2026-02-31') === null);
+  t('ゼロ埋めを要求する',        parseDate('2026-8-6') === null);
+  t('範囲外の年を拒む',          parseDate('1969-12-31') === null);
+  t('realTodayStr は局所成分',   realTodayStr() === fmtLocal(new Date()));
+  t('辞書順＝時系列順',          ('2026-09-01' < '2026-10-01') && ('2026-01-31' < '2026-02-01'));
+
+  var saved = state.tasks, savedDbg = dbgToday;
+  dbgToday = '2026-08-06';
+  state.tasks = [
+    { id:'a', name:'あ', intervalDays:3,  lastDoneDate:'2026-08-01', createdAt:'2026-08-01' },
+    { id:'b', name:'い', intervalDays:30, lastDoneDate:'2026-07-05', createdAt:'2026-07-05' },
+    { id:'c', name:'う', intervalDays:10, lastDoneDate:'2026-08-06', createdAt:'2026-08-06' }
+  ];
+  var v = computeView('2026-08-06');
+  t('いま出てるもの は2件',       v.due.length === 2);
+  t('まだ先 は1件',              v.later.length === 1);
+  t('ratio の降順（あ が先）',    v.due[0].t.id === 'a');
+  t('あと◯日 の計算',            v.later[0].daysLeft === 10);
+  state.tasks = [
+    { id:'x', name:'かき', intervalDays:5, lastDoneDate:'2026-08-06', createdAt:'2026-08-06' },
+    { id:'y', name:'あい', intervalDays:5, lastDoneDate:'2026-08-06', createdAt:'2026-08-06' }
+  ];
+  var v2 = computeView('2026-08-16');
+  t('同率は名前の五十音順',       v2.due[0].t.id === 'y');
+  state.tasks = saved; dbgToday = savedDbg;
+
+  t('壊れたJSONを拒む',          validateImport('{{{').ok === false);
+  t('tasks が無いと拒む',        validateImport('{"a":1}').ok === false);
+  t('新しい版を拒む',            validateImport('{"version":9,"tasks":[]}').ok === false);
+  t('不足項目を直す',            validateImport('{"tasks":[{"name":"a","intervalDays":3}]}').repaired === 1);
+  t('名前無しは捨てる',          validateImport('{"tasks":[{"intervalDays":3}]}').dropped === 1);
+  t('裸の配列も受理する',        validateImport('[{"name":"a","intervalDays":3}]').ok === true);
+  var unk = validateImport('{"tasks":[{"id":"i","name":"a","intervalDays":3,"lastDoneDate":"2026-01-01","createdAt":"2026-01-01","memo":"のこす"}]}');
+  t('未知フィールドを保持する',   unk.ok && unk.tasks[0].memo === 'のこす');
+  t('未知フィールドは無傷',      unk.ok && unk.repaired === 0);
+  var rt = { app:'interval-tasks', version:1, exportedAt:'2026-08-06', tasks:[
+    { id:'i1', name:'あ', emoji:'🧹', intervalDays:14, lastDoneDate:'2026-08-06', createdAt:'2026-08-06' }
+  ]};
+  var rtIn = validateImport(JSON.stringify(rt));
+  t('書き出し→読み込みで同一',   rtIn.ok && JSON.stringify(rtIn.tasks) === JSON.stringify(rt.tasks));
+
+  var el = $('testout');
+  el.hidden = false;
+  el.textContent = '通過 ' + pass + ' / 失敗 ' + fail + '\n\n' + out.join('\n');
+  return { pass:pass, fail:fail };
+}
+window.__selftest = runSelfTest;
+
+
+/* =========================================================================
+   12. 起動
+   ========================================================================= */
+
+applyHash();
+load();
+render();
+scheduleMidnight();
+if (/(?:^#|&)selftest/.test(location.hash)) runSelfTest();
+
+})();
+</script>
+</body>
+</html>
