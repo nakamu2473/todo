@@ -6,6 +6,7 @@
     {
       "id": "seed-01",
       "name": "キッチン掃除",
+      "icon": "broom",
       "emoji": "🧹",
       "intervalDays": 14,
       "lastDoneDate": "2026-08-06",
@@ -14,6 +15,7 @@
     {
       "id": "seed-02",
       "name": "トイレ掃除",
+      "icon": "toilet",
       "emoji": "🚽",
       "intervalDays": 14,
       "lastDoneDate": "2026-08-06",
@@ -22,6 +24,7 @@
     {
       "id": "seed-03",
       "name": "洗面台掃除",
+      "icon": "brush",
       "emoji": "🪥",
       "intervalDays": 10,
       "lastDoneDate": "2026-08-06",
@@ -30,6 +33,7 @@
     {
       "id": "seed-04",
       "name": "階段掃除",
+      "icon": "ladder",
       "emoji": "🪜",
       "intervalDays": 8,
       "lastDoneDate": "2026-08-06",
@@ -38,6 +42,7 @@
     {
       "id": "seed-05",
       "name": "シーツ洗濯",
+      "icon": "bed",
       "emoji": "🛏",
       "intervalDays": 14,
       "lastDoneDate": "2026-08-06",
@@ -46,6 +51,7 @@
     {
       "id": "seed-06",
       "name": "1Fるんばちゃ",
+      "icon": "robot",
       "emoji": "🤖",
       "intervalDays": 6,
       "lastDoneDate": "2026-08-06",
@@ -54,6 +60,7 @@
     {
       "id": "seed-07",
       "name": "2Fるんばちゃ",
+      "icon": "robot",
       "emoji": "🤖",
       "intervalDays": 6,
       "lastDoneDate": "2026-08-06",
@@ -62,6 +69,7 @@
     {
       "id": "seed-08",
       "name": "1Fクイックルワイパー",
+      "icon": "wiper",
       "emoji": "🧽",
       "intervalDays": 6,
       "lastDoneDate": "2026-08-06",
@@ -70,6 +78,7 @@
     {
       "id": "seed-09",
       "name": "2Fクイックルワイパー",
+      "icon": "wiper",
       "emoji": "🧽",
       "intervalDays": 6,
       "lastDoneDate": "2026-08-06",
@@ -78,6 +87,7 @@
     {
       "id": "seed-10",
       "name": "メイクブラシ洗う",
+      "icon": "lipstick",
       "emoji": "💄",
       "intervalDays": 29,
       "lastDoneDate": "2026-08-06",
@@ -86,6 +96,7 @@
     {
       "id": "seed-11",
       "name": "猫トイレ掃除",
+      "icon": "cat",
       "emoji": "🐈",
       "intervalDays": 8,
       "lastDoneDate": "2026-08-06",
@@ -94,6 +105,7 @@
     {
       "id": "seed-12",
       "name": "猫トイレ丸洗い",
+      "icon": "soap",
       "emoji": "🧼",
       "intervalDays": 12,
       "lastDoneDate": "2026-08-06",
@@ -102,6 +114,7 @@
     {
       "id": "seed-13",
       "name": "猫のお皿洗う",
+      "icon": "dish",
       "emoji": "🍽",
       "intervalDays": 14,
       "lastDoneDate": "2026-08-06",
@@ -110,6 +123,7 @@
     {
       "id": "seed-14",
       "name": "猫爪切り",
+      "icon": "scissors",
       "emoji": "✂️",
       "intervalDays": 14,
       "lastDoneDate": "2026-08-06",
@@ -118,6 +132,7 @@
     {
       "id": "seed-15",
       "name": "メイカルのバリカン",
+      "icon": "paw",
       "emoji": "🐾",
       "intervalDays": 19,
       "lastDoneDate": "2026-08-06",
@@ -126,6 +141,7 @@
     {
       "id": "seed-16",
       "name": "買い出し",
+      "icon": "cart",
       "emoji": "🛒",
       "intervalDays": 7,
       "lastDoneDate": "2026-08-06",
