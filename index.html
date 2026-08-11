@@ -1019,26 +1019,65 @@ function envelope(){
   return { app:'interval-tasks', version:SCHEMA, exportedAt:todayStr(), tasks:state.tasks };
 }
 
+/* 戻り値は「初回起動だったか」。起動時だけこれを見て種データを入れる。
+   storage イベント（別タブ同期）からの呼び出しでは見ない——別のタブで消された
+   直後に生やし返すのは誤りなので。 */
 function load(){
   var raw = null;
   try { raw = localStorage.getItem(KEY); } catch(e){ raw = null; }
-  if (raw === null || raw === '') return;
+  if (raw === null || raw === '') return true;      /* キーが無い＝初回起動 */
 
   var parsed;
   try { parsed = JSON.parse(raw); }
-  catch(e){ quarantineRaw = raw; return; }
+  catch(e){ quarantineRaw = raw; return false; }
 
   if (parsed && !Array.isArray(parsed) && typeof parsed.version === 'number' && parsed.version > SCHEMA){
-    quarantineRaw = raw; return;
+    quarantineRaw = raw; return false;
   }
   var arr = Array.isArray(parsed) ? parsed
           : (parsed && typeof parsed === 'object' && Array.isArray(parsed.tasks)) ? parsed.tasks
           : null;
-  if (!arr){ quarantineRaw = raw; return; }
+  if (!arr){ quarantineRaw = raw; return false; }
 
   var r = normalizeAll(arr);
   state.tasks = r.tasks;
   if (r.repaired > 0 || r.dropped > 0) loadRepairNote = r;
+  /* キーはあるが tasks が空 = ユーザーが自分で全部消した。種は入れない。
+     「キーが無い」と同じ扱いにすると、1件ずつ消して0件にしただけで16件生えてくる */
+  return false;
+}
+
+/* 最初の16件。初回起動のときだけ入れる。
+   [アイコンid, 絵文字, 名前, 間隔]。emoji も持たせておくと、古い版の
+   index.html で開いたときにも行頭に絵が出る。 */
+var SEED = [
+  ['broom','\u{1F9F9}','キッチン掃除',14],   ['toilet','\u{1F6BD}','トイレ掃除',14],
+  ['brush','\u{1FAA5}','洗面台掃除',10],     ['ladder','\u{1FA9C}','階段掃除',8],
+  ['bed','\u{1F6CF}','シーツ洗濯',14],       ['robot','\u{1F916}','1Fるんばちゃ',6],
+  ['robot','\u{1F916}','2Fるんばちゃ',6],    ['wiper','\u{1F9FD}','1Fクイックルワイパー',6],
+  ['wiper','\u{1F9FD}','2Fクイックルワイパー',6], ['lipstick','\u{1F484}','メイクブラシ洗う',29],
+  ['cat','\u{1F408}','猫トイレ掃除',8],      ['soap','\u{1F9FC}','猫トイレ丸洗い',12],
+  ['dish','\u{1F37D}','猫のお皿洗う',14],    ['scissors','\u2702\uFE0F','猫爪切り',14],
+  ['paw','\u{1F43E}','メイカルのバリカン',19], ['cart','\u{1F6D2}','買い出し',7]
+];
+
+/* 日付は seed-tasks.json の固定日ではなく「今日」にする。
+   そうしないと、あとから初めて開いた人は間隔の短いものが最初から
+   「いま出てるもの」に入ってしまう。全16件を「まだ先」から始める */
+function seedInitialTasks(){
+  var today = todayStr();
+  state.tasks = SEED.map(function(row, i){
+    return {
+      id: 'seed-' + (i + 1 < 10 ? '0' : '') + (i + 1),
+      name: row[2],
+      icon: row[0],
+      emoji: row[1],
+      intervalDays: row[3],
+      lastDoneDate: today,
+      createdAt: today
+    };
+  });
+  save();
 }
 var loadRepairNote = null;
 
@@ -1938,7 +1977,7 @@ window.__selftest = runSelfTest;
    ========================================================================= */
 
 applyHash();
-load();
+if (load()) seedInitialTasks();     /* 初回起動のときだけ。壊れたデータのときは入れない */
 upgradeIcons(state.tasks);
 buildIconGrid();
 render();
